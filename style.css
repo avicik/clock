@@ -1,11 +1,12 @@
 :root {
     --body-bg: #ffffff;
     --font-size: 15vw;
-    --center-border: 0.3vw solid #f5f5f5;
+    --center-border: 0.15vw solid #f5f5f5;
     --col-width: 10vw;
     --col-height: 15vw;
-    --col-color: #2c2c2c;
-    --col-bg: #fafafa;
+    --col-bg: #f7f7f7;
+    --purple-dark: #2c2c2c;
+    --border-color: #f0f0f0;
 }
 
 body {
@@ -45,7 +46,7 @@ body {
     left: -1.4vw;
     width: 0.4vw;
     height: 0.4vw;
-    background-color: var(--col-color);
+    background-color: var(--purple-dark);
     border-radius: 0.1vw;
 }
 
@@ -67,9 +68,9 @@ body {
     font-size: var(--font-size);
     background: var(--col-bg);
     border-radius: 1vw;
-    color: var(--col-color);
     overflow: hidden;
     box-sizing: border-box;
+    border: 0.1vw solid var(--border-color);
 }
 
 .flip .curr::before,
@@ -129,4 +130,28 @@ body {
 .flip.active {
     transition: all 0.5s ease-in-out;
     transform: rotateX(-180deg);
+}
+
+/* 时 - 前两个数字 */
+.col:nth-child(1) .curr::before,
+.col:nth-child(1) .next::before,
+.col:nth-child(2) .curr::before,
+.col:nth-child(2) .next::before {
+    color: rgba(184, 146, 255, 0.8);
+}
+
+/* 分 - 中间两个数字 */
+.col:nth-child(3) .curr::before,
+.col:nth-child(3) .next::before,
+.col:nth-child(4) .curr::before,
+.col:nth-child(4) .next::before {
+    color: rgba(255, 194, 226, 0.8);
+}
+
+/* 秒 - 最后两个数字 */
+.col:nth-child(5) .curr::before,
+.col:nth-child(5) .next::before,
+.col:nth-child(6) .curr::before,
+.col:nth-child(6) .next::before {
+    color: rgba(255, 144, 179, 0.8);
 } 
