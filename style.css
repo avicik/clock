@@ -33,6 +33,30 @@ body {
 .col:nth-child(3),
 .col:nth-child(5) {
     margin-left: 2vw;
+    position: relative;
+}
+
+.col:nth-child(3)::before,
+.col:nth-child(3)::after,
+.col:nth-child(5)::before,
+.col:nth-child(5)::after {
+    content: '';
+    position: absolute;
+    left: -1.4vw;
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: var(--col-color);
+    border-radius: 0.1vw;
+}
+
+.col:nth-child(3)::before,
+.col:nth-child(5)::before {
+    top: 40%;
+}
+
+.col:nth-child(3)::after,
+.col:nth-child(5)::after {
+    top: 60%;
 }
 
 .curr,
